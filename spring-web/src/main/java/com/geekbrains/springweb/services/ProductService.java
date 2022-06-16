@@ -32,4 +32,10 @@ public class ProductService {
         productRepository.save(product);
 
     }
+
+
+    public void getChange(Long productId, Integer delta){
+        Product product = productRepository.getById(productId);
+        product.setCost(product.getCost() + delta);
+    }
 }
